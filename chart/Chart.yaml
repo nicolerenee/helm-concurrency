@@ -1,0 +1,4 @@
+apiVersion: v1
+description: A simple hello-world Helm chart
+name: helloworld
+version: 0.1.0
