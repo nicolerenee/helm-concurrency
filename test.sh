@@ -13,6 +13,6 @@ portforwardPID=$!
 echo "Starting go test..."
 go test .
 
-# ./cleanup.sh
+./cleanup.sh
 
 kill $portforwardPID
