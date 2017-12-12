@@ -1,8 +1,8 @@
 #!/bin/bash
 
 
-export TILLER_NS=kube-system
-export TILLER_POD=`kubectl -n $TILLER_NS get pods \
+TILLER_NS=kube-system
+TILLER_POD=`kubectl -n $TILLER_NS get pods \
        --selector=app=helm,name=tiller \
        -o jsonpath="{range .items[*]}{@.metadata.name}{end}" | head -n1`
 kubectl port-forward -n $TILLER_NS $TILLER_POD 44134:44134 > /dev/null 2>&1 &
